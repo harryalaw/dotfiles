@@ -1,7 +1,46 @@
+[core]
+	pager = delta
+	editor = nvim
+	fsmonitor = true
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; };f"
+	gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; };f"
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[pull]
+	rebase = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+	verbose = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoStash = true
+	autosquash = true
+	updateRefs = true
 [push]
 	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[help]
+	autocorrect = prompt
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[merge]
+	conflictstyle = zdiff3
+[feature]
+	manyFiles = 1
